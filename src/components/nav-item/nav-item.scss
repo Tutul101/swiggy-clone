@@ -1,0 +1,37 @@
+.nav-item-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  .icon-wrapper {
+    svg {
+      width: 17px;
+      height: 17px;
+    }
+  }
+  .item-name {
+    font-size: 1.25rem;
+    text-transform: capitalize;
+  }
+}
+
+.nav-item-wrapper:hover {
+  color: var(--orange);
+  svg {
+    fill: var(--orange);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-item-wrapper {
+    .icon-wrapper {
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+    .item-name {
+      font-size: 2rem;
+    }
+  }
+}

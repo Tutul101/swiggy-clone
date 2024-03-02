@@ -4,6 +4,7 @@
   --orange: #fc8019;
   --grey1: #3d4152;
   --white: rgba(255, 255, 255, 0.6);
+  --bg1: rgb(255, 255, 255);
 }
 
 * {
@@ -11,14 +12,40 @@
   margin: 0px;
   box-sizing: border-box;
   font-size: 62.5%;
+  font-family: "Kanit", sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 .App {
   background-color: var(--white);
 
   padding: 0;
+}
+
+.mobile-only {
+  display: block;
+}
+
+.desktop-only {
+  display: none;
+}
+
+@media screen and (min-width: 767px) {
+  .mobile-only {
+    display: none;
+  }
+  .desktop-only {
+    display: block;
+  }
 }
