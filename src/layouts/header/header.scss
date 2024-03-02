@@ -9,10 +9,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1.5rem;
+  padding: 1rem 1.5rem;
   background-color: #fff;
   box-shadow: 0 15px 40px -20px rgb(0, 0, 0);
   margin-bottom: 4rem;
+  color: var(--grey1);
+
   .swiggy-icon {
     svg {
       height: 30px;
@@ -21,7 +23,57 @@
   }
   .header-menu {
     display: flex;
-    flex: 0.5;
+    flex: 0.7;
     justify-content: space-between;
+
+    .cart-wrapper {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 1.25rem;
+      cursor: pointer;
+
+      p {
+        font-size: 1.25rem;
+      }
+
+      span {
+        font-size: 1.2rem;
+      }
+    }
+
+    .cart-wrapper:hover {
+      color: var(--orange);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-wrapper {
+    max-width: none;
+    min-width: none;
+  }
+  .header {
+    padding: 2rem 10rem;
+    height: 8rem;
+    max-height: 8rem;
+    .swiggy-icon {
+      svg {
+        height: 50px;
+        width: 35px;
+      }
+    }
+    .header-menu {
+      flex: 0.5;
+
+      .cart-wrapper {
+        p {
+          font-size: 2.25rem;
+        }
+        span {
+          font-size: 2.25rem;
+        }
+      }
+    }
   }
 }
