@@ -3,7 +3,7 @@ import React from "react";
 const SearchIcon = () => {
   return (
     <svg
-      class="_1GTCc"
+      className="_1GTCc"
       viewBox="5 -1 12 25"
       height="17"
       width="17"

@@ -3,7 +3,7 @@ import React from "react";
 const ProfileIcon = () => {
   return (
     <svg
-      class="_1GTCc"
+      className="_1GTCc"
       viewBox="6 0 12 24"
       height="19"
       width="18"
