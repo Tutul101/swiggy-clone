@@ -29,10 +29,11 @@ a {
 
 .App {
   background-color: var(--white);
-
   padding: 0;
 }
-
+.main-conatiner {
+  padding-top: 8rem;
+}
 .mobile-only {
   display: block;
 }

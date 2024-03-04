@@ -9,7 +9,7 @@ const Root = () => {
       <div>
         <Header />
       </div>
-      <main>
+      <main className="main-conatiner">
         <Outlet />
       </main>
       <Footer />
