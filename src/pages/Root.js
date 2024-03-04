@@ -6,7 +6,9 @@ import Footer from "../layouts/footer";
 const Root = () => {
   return (
     <>
-      <Header />
+      <div>
+        <Header />
+      </div>
       <main>
         <Outlet />
       </main>
