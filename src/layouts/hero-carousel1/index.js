@@ -2,6 +2,7 @@ import React from "react";
 import _get from "lodash/get";
 
 import CusineCard from "../../components/cuisine-card";
+import Caraousel from "../../components/common/caraousel";
 
 const HeroCarousel1 = ({ cards }) => {
   console.log("Carousel Cards", cards);
@@ -9,26 +10,20 @@ const HeroCarousel1 = ({ cards }) => {
   console.log("image cards", itemCards);
   return (
     <div>
-      <CusineCard
-        imageUrl={itemCards && itemCards[0] && itemCards[0].imageId}
-        alt={itemCards && itemCards[0] && itemCards[0].action.text}
-      />
-      <CusineCard
-        imageUrl={itemCards && itemCards[1] && itemCards[1].imageId}
-        alt={itemCards && itemCards[0] && itemCards[0].action.text}
-      />
-      <CusineCard
-        imageUrl={itemCards && itemCards[2] && itemCards[2].imageId}
-        alt={itemCards && itemCards[0] && itemCards[0].action.text}
-      />
-      <CusineCard
-        imageUrl={itemCards && itemCards[3] && itemCards[3].imageId}
-        alt={itemCards && itemCards[0] && itemCards[0].action.text}
-      />
-      <CusineCard
-        imageUrl={itemCards && itemCards[4] && itemCards[4].imageId}
-        alt={itemCards && itemCards[0] && itemCards[0].action.text}
-      />
+      <div style={{ fontSize: "40px" }}>
+        <Caraousel>
+          {itemCards &&
+            itemCards.map((cardItem) => {
+              const { imageId, action } = cardItem;
+              return (
+                <CusineCard
+                  imageUrl={cardItem && imageId}
+                  alt={cardItem && action.text}
+                />
+              );
+            })}
+        </Caraousel>
+      </div>
     </div>
   );
 };
