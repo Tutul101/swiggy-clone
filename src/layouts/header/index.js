@@ -5,7 +5,7 @@ import "./header.scss";
 import NavItem from "../../components/nav-item";
 import SearchIcon from "../../assets/icons/search-icon";
 import ProfileIcon from "../../assets/icons/profile-icon";
-import CartIcon from "../../assets/icons/cart-icon";
+
 const Header = () => {
   return (
     <div className="header-wrapper">

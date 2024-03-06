@@ -41,12 +41,23 @@ a {
 .desktop-only {
   display: none;
 }
-
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 2rem;
+}
 @media screen and (min-width: 767px) {
   .mobile-only {
     display: none;
   }
   .desktop-only {
     display: block;
+  }
+
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }

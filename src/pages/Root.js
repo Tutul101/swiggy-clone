@@ -9,10 +9,10 @@ const Root = () => {
       <div>
         <Header />
       </div>
-      <main className="main-conatiner">
+      <main className="main-conatiner container">
         <Outlet />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
