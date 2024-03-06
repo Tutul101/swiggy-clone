@@ -1,0 +1,11 @@
+.cusine-card-image {
+  width: 60px;
+  height: 75px;
+}
+
+@media screen and (min-width: 768px) {
+  .cusine-card-image {
+    width: 144px;
+    height: 180px;
+  }
+}
