@@ -11,10 +11,6 @@ const Home = () => {
     const loadData = async () => {
       try {
         const homepageData = await getHomePageData();
-        // console.log(
-        //   "home page data",
-        //   _get(homepageData, ["data", "cards"], [])
-        // );
         setHomeData(_get(homepageData, ["data", "cards"], []));
       } catch (err) {
         setError(true);
