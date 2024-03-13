@@ -3,6 +3,7 @@ import _get from "lodash/get";
 
 import { getHomePageData } from "../../helper/api";
 import HeroCarousel1 from "../../layouts/hero-carousel1";
+import HeroCarousel2 from "../../layouts/hero-caaousel2";
 
 const Home = () => {
   const [homeData, setHomeData] = useState([]);
@@ -28,7 +29,9 @@ const Home = () => {
   return (
     <div>
       <HeroCarousel1 cards={homeData[0] && homeData[0].card.card} />
-      <h1>Home</h1>
+
+      <HeroCarousel2 cards={homeData[1] && homeData[1].card.card} />
+      {/* <h1>Home</h1> */}
     </div>
   );
 };
