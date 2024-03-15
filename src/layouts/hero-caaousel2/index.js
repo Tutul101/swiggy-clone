@@ -21,15 +21,25 @@ const HeroCarousel2 = ({ cards }) => {
       <div className="hero-caraousel-title-wrapper">
         <Headline title={headline} />
       </div>
-      <div>
-        <RestrauntCard
-          image="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f01666ac73626461d7455d9c24005cd4"
-          name="KFC"
-          rating={4.3}
-          deliveryTime="25-30 mins"
-          cuisines={["Burgers", "Biryani", "American", "Snacks", "Fast Food"]}
-          location="Saltlake"
-        />
+
+      <div className="hero-carousel2-wrapper">
+        {restaurants &&
+          restaurants.map((restraunt) => {
+            const { info } = restraunt;
+            const deliveryTime = info.sla.slaString;
+            return (
+              <div key={info.id}>
+                <RestrauntCard
+                  image={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${info.cloudinaryImageId}`}
+                  name={info.name}
+                  rating={info.avgRating}
+                  deliveryTime={deliveryTime}
+                  cuisines={info.cuisines}
+                  location={info.areaName}
+                />
+              </div>
+            );
+          })}
       </div>
     </div>
   );

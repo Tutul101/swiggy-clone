@@ -30,6 +30,15 @@
     margin: 3.5rem 0;
     width: 100%;
   }
+
+  .hero-carousel2-wrapper {
+    display: flex;
+    overflow-x: scroll;
+    gap: 1.8rem;
+  }
+  .hero-carousel2-wrapper::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 769px) {

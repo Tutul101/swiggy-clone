@@ -4,7 +4,8 @@
   gap: 0.25rem;
   width: 156px;
   max-width: 156px;
-  height: 200px;
+  height: 221px;
+  transition: transform 0.3s ease;
 
   .top-half {
     max-width: 156px;
@@ -51,13 +52,15 @@
 }
 
 .restraunt-card-wrapper:hover {
-  transform: scale(1.05);
+  transform: scale(0.95);
 }
 
 @media screen and (min-width: 769px) {
   .restraunt-card-wrapper {
     width: 273px;
     max-width: 273px;
+    height: 330px;
+    max-height: 330px;
     .top-half {
       .restraunt-image {
         width: 273px;
