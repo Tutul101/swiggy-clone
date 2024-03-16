@@ -6,11 +6,13 @@ import Footer from "../layouts/footer";
 const Root = () => {
   return (
     <>
-      <Header />
-      <main>
+      <div>
+        <Header />
+      </div>
+      <main className="main-conatiner container">
         <Outlet />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

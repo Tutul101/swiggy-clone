@@ -5,6 +5,9 @@
   --grey1: #3d4152;
   --white: rgba(255, 255, 255, 0.6);
   --bg1: rgb(255, 255, 255);
+  --grey2: rgb(226, 226, 231);
+
+  --font-color-1: rgba(2, 6, 12, 0.75);
 }
 
 * {
@@ -29,10 +32,11 @@ a {
 
 .App {
   background-color: var(--white);
-
   padding: 0;
 }
-
+.main-conatiner {
+  padding-top: 8rem;
+}
 .mobile-only {
   display: block;
 }
@@ -40,12 +44,23 @@ a {
 .desktop-only {
   display: none;
 }
-
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 2rem;
+}
 @media screen and (min-width: 767px) {
   .mobile-only {
     display: none;
   }
   .desktop-only {
     display: block;
+  }
+
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }

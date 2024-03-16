@@ -1,0 +1,72 @@
+.hero-caraousel-wrapper {
+  margin-top: 0.25rem;
+  .hero-caraousel-title-wrapper {
+    margin-bottom: 1.5rem;
+    .caraousel-navigation {
+      display: none;
+    }
+  }
+  .carousel-desktop-wrapper {
+    display: none;
+  }
+  .carousel-mobile-wrapper {
+    display: flex;
+    overflow-y: scroll;
+    gap: 2rem;
+
+    .double-cusine {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+  .carousel-mobile-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel-border {
+    height: 2px;
+    background-color: var(--grey2);
+    margin: 3.5rem 0;
+    width: 100%;
+  }
+
+  .hero-carousel2-wrapper {
+    display: flex;
+    overflow-x: scroll;
+    gap: 1.8rem;
+  }
+  .hero-carousel2-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .hero-caraousel-wrapper {
+    margin-top: 4rem;
+    .hero-caraousel-title-wrapper {
+      margin-bottom: 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      .caraousel-navigation {
+        display: flex;
+        gap: 2rem;
+      }
+    }
+    .carousel-desktop-wrapper {
+      display: flex !important;
+      overflow-x: scroll;
+      gap: 2.25rem;
+    }
+    .carousel-desktop-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+    .carousel-mobile-wrapper {
+      display: none !important;
+    }
+
+    .carousel-border {
+      margin: 7rem 0;
+    }
+  }
+}
