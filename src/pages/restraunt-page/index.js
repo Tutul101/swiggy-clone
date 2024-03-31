@@ -3,6 +3,7 @@ import _get from "lodash/get";
 import { useParams } from "react-router-dom";
 import { getRestrauntPageData } from "../../helper/api";
 import RestrauntPageHeader from "../../components/restraunt-page-header";
+import MenuItem from "../../components/menu-item";
 
 const RestrauntPage = () => {
   const [restrauntInfo, setRestrauntInfo] = useState([]);
@@ -11,7 +12,7 @@ const RestrauntPage = () => {
   useEffect(() => {
     const loadData = async () => {
       const data = await getRestrauntPageData(resId);
-      // console.log("Restraunt page data", data.data.cards);
+      console.log("Restraunt page data", data.data.cards);
       setRestrauntInfo(data.data.cards);
     };
     loadData();
@@ -20,10 +21,12 @@ const RestrauntPage = () => {
   if (restrauntInfo.length === 0) {
     return <h1>Loading...</h1>;
   }
-  const restrauntName = _get(restrauntInfo, ["0", "card", "card", "text"], "");
   return (
     <div>
       <RestrauntPageHeader restrauntDetails={restrauntInfo[2]} />
+      <div style={{ marginTop: "2rem" }}>
+        <MenuItem />
+      </div>
     </div>
   );
 };
