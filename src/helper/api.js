@@ -1,8 +1,8 @@
-import { homePageData, restrauntPageData } from "./constant";
+import { homePageAPI, restrauntPageAPI } from "./constant";
 
 export const getHomePageData = async () => {
   try {
-    const data = await fetch(homePageData);
+    const data = await fetch(homePageAPI);
     const resData = await data.json();
     return resData;
   } catch (err) {
@@ -13,7 +13,7 @@ export const getHomePageData = async () => {
 
 export const getRestrauntPageData = async (restrauntId) => {
   try {
-    const data = await fetch(`${restrauntPageData}${restrauntId}`);
+    const data = await fetch(`${restrauntPageAPI}${restrauntId}`);
     const resData = await data.json();
     return resData;
   } catch (err) {

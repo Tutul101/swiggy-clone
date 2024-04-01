@@ -1,26 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import _get from "lodash/get";
 import { useParams } from "react-router-dom";
-import { getRestrauntPageData } from "../../helper/api";
+
 import RestrauntPageHeader from "../../components/restraunt-page-header";
 import MenuItem from "../../components/menu-item";
+import useLoadRestrauntData from "../../utils/useLoadRestrauntData";
 
 const RestrauntPage = () => {
-  const [restrauntInfo, setRestrauntInfo] = useState([]);
   const { resId } = useParams();
-
-  useEffect(() => {
-    const loadData = async () => {
-      const data = await getRestrauntPageData(resId);
-      console.log("Restraunt page data", data.data.cards);
-      setRestrauntInfo(data.data.cards);
-    };
-    loadData();
-  }, []);
+  const { data: restrauntInfo } = useLoadRestrauntData(resId, []);
+  console.log("restrauntInfo", restrauntInfo);
 
   if (restrauntInfo.length === 0) {
     return <h1>Loading...</h1>;
   }
+
   return (
     <div>
       <RestrauntPageHeader restrauntDetails={restrauntInfo[2]} />
