@@ -1,0 +1,12 @@
+.restraunt-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .restraunt-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}

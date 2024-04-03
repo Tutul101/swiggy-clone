@@ -55,13 +55,10 @@ const HeroCarousel2 = ({ cards }) => {
       <div className="hero-carousel2-wrapper" ref={containerRef}>
         {restaurants &&
           restaurants.map((restraunt) => {
-            const { cta, info } = restraunt;
-            const restrauntLink = cta && cta.link;
-            const baseUrl = "https://www.swiggy.com";
-            const slug = restrauntLink.replace(baseUrl, "");
+            const { info } = restraunt;
             const deliveryTime = info.sla.slaString;
             return (
-              <Link to={`${slug}`} key={info.id}>
+              <Link to={`restraunt/${info.id}`} key={info.id}>
                 <RestrauntCard
                   image={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${info.cloudinaryImageId}`}
                   name={info.name}

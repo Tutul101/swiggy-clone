@@ -1,0 +1,179 @@
+.restraunt-page-header {
+  margin-top: 2rem;
+  .restraunt-name {
+    font-size: 2.2rem;
+    font-weight: 500;
+    font-family: "Kanit", sans-serif;
+    margin-bottom: 2rem;
+  }
+
+  .header-wrapper-component {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    background: linear-gradient(
+      rgb(255, 255, 255) -6.71%,
+      rgb(235, 235, 242) 56.19%,
+      rgb(223, 223, 231) 106.56%
+    );
+    border-radius: 30px;
+    .header-container {
+      border: 1px solid var(--grey2);
+      border-radius: 30px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background-color: white;
+      .header-rating {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        .rating {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font-size: 1.4rem;
+          svg {
+            width: 15px;
+            height: 15px;
+          }
+        }
+        .price-for-two {
+          font-size: 1.4rem;
+        }
+      }
+      .cuisines {
+        display: flex;
+        gap: 5px;
+        .cuisine {
+          font-size: 1.2rem;
+          color: var(--orange);
+          text-decoration: underline;
+        }
+      }
+      .info {
+        display: flex;
+        gap: 1rem;
+
+        .distance-icon {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .circle {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: rgb(196, 196, 196);
+          }
+          .bar {
+            width: 1px;
+            height: 20px;
+            background-color: rgb(196, 196, 196);
+          }
+        }
+
+        .location-and-time {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .location {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            .location-name {
+              color: var(--grey1);
+              font-size: 0.9rem;
+              font-weight: 400;
+            }
+          }
+          .delivery-time {
+            font-size: 1rem;
+            font-weight: 600;
+          }
+        }
+      }
+      .distance {
+        font-size: 1.2rem;
+        color: var(--grey1);
+        b {
+          font-size: 1.2rem;
+          font-weight: 500;
+          color: var(--grey1);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .restraunt-page-header {
+    margin-top: 4rem;
+    .restraunt-name {
+      font-size: 3.2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .header-wrapper-component {
+      padding: 0 2rem 2rem 2rem;
+
+      .header-container {
+        padding: 2.5rem;
+        gap: 2rem;
+        .header-rating {
+          gap: 2rem;
+          .rating {
+            gap: 5px;
+            font-size: 2rem;
+            svg {
+              width: 25px;
+              height: 25px;
+            }
+          }
+          .price-for-two {
+            font-size: 2rem;
+          }
+        }
+        .cuisines {
+          gap: 8px;
+          .cuisine {
+            font-size: 1.8rem;
+          }
+        }
+        .info {
+          display: flex;
+          gap: 2rem;
+
+          .distance-icon {
+            .circle {
+              width: 13px;
+              height: 13px;
+            }
+            .bar {
+              height: 25px;
+            }
+          }
+
+          .location-and-time {
+            .location {
+              font-size: 1.6rem;
+              .location-name {
+                font-size: 1.4rem;
+              }
+            }
+            .delivery-time {
+              font-size: 1.6rem;
+            }
+          }
+        }
+        .distance {
+          font-size: 1.8rem;
+          b {
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+}

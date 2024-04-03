@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./pages/Root";
 import Home from "./pages/home";
+import RestrauntPage from "./pages/restraunt-page";
 
 import "./scss/index.scss";
 
@@ -13,6 +14,10 @@ function App() {
         {
           index: true,
           element: <Home />,
+        },
+        {
+          path: "restraunt/:resId",
+          element: <RestrauntPage />,
         },
       ],
     },
