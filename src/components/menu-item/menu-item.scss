@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: 7fr 5fr;
   gap: 1rem;
-  padding-bottom: 4rem;
+  padding: 4rem 0;
   border-bottom: 1px solid var(--grey2);
   .menu-item-info {
     display: flex;
@@ -43,7 +43,7 @@
       border-radius: 15px;
       position: absolute;
       left: 0%;
-      bottom: -18px;
+      bottom: 36px;
       transform: translateX(5%);
     }
   }
