@@ -10,7 +10,6 @@ import MenuList from "../../components/menu-list";
 const RestrauntPage = () => {
   const { resId } = useParams();
   const { data: restrauntInfo } = useLoadRestrauntData(resId, []);
-  console.log("restrauntInfo", restrauntInfo[4]);
 
   if (restrauntInfo.length === 0) {
     return <h1>Loading...</h1>;
@@ -21,8 +20,6 @@ const RestrauntPage = () => {
     [4, "groupedCard", "cardGroupMap", "REGULAR", "cards"],
     []
   );
-
-  console.log("menuList", menuList);
   return (
     <div>
       <RestrauntPageHeader restrauntDetails={restrauntInfo[2]} />
