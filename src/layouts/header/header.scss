@@ -27,6 +27,9 @@
     flex: 0.7;
     justify-content: space-between;
 
+    a {
+      color: var(--grey1);
+    }
     .cart-wrapper {
       display: flex;
       gap: 0.5rem;
