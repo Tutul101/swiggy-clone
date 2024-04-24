@@ -1,0 +1,18 @@
+.sign-in-wrapper {
+  width: 100%;
+  margin-top: 2rem;
+  height: 625px;
+  padding: 3rem 0rem;
+
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sign-in-wrapper {
+    padding: 3rem 3rem;
+  }
+}

@@ -29,7 +29,7 @@ const LoginPage = () => {
           />
         </div>
       </div>
-      <SignIn />
+      {isLogin ? <SignIn /> : <SignUp />}
     </div>
   );
 };

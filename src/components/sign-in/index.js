@@ -8,7 +8,7 @@ const SignIn = () => {
   return (
     <div className="sign-in-wrapper">
       <form className="form-wrapper">
-        <FormInput label="User Name" type="text" />
+        <FormInput label="Email" type="text" />
         <FormInput label="Password" type="password" />
 
         <div>
