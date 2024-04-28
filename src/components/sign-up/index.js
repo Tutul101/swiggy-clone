@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import FormInput from "../form-input";
 import Button from "../button";
-
+import {
+  createAuthUserWithEmailAndPassword,
+  createUserDocumentFormAuth,
+  signInWithGooglePopup,
+} from "../../utils/firebase/firebase-utils";
 import "./sign-up.scss";
 
 const defautlForm = {
@@ -19,7 +23,10 @@ const SignUp = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleFormSubmit = () => {
+  const resetFormFields = () => {
+    setFormData(defautlForm);
+  };
+  const handleFormSubmit = async () => {
     if (
       userName === "" ||
       userEmail === "" ||
@@ -27,7 +34,29 @@ const SignUp = () => {
       confirmPassword === ""
     ) {
       alert("Please enter all the fields before sign-up");
+    } else if (password !== confirmPassword) {
+      alert("Passwords do not matched");
+    } else {
+      try {
+        const { user } = await createAuthUserWithEmailAndPassword(
+          userEmail,
+          password
+        );
+        console.log("userDoc", user);
+        await createUserDocumentFormAuth(user, { displayName: userName });
+        resetFormFields();
+      } catch (err) {
+        if (err.code === "auth/email-already-in-use") {
+          alert("Cannot create user email already in use");
+        }
+        console.log("User creation encounterd an error", err);
+      }
     }
+  };
+  const googleSignUp = async () => {
+    const response = await signInWithGooglePopup();
+    console.log("sign in response", response.user);
+    const userDocRef = await createUserDocumentFormAuth(response.user);
   };
   return (
     <div className="sign-in-wrapper">
@@ -49,7 +78,7 @@ const SignUp = () => {
         <FormInput
           label="Password"
           type="password"
-          name="passwords"
+          name="password"
           value={password}
           onChange={HandleChange}
         />
@@ -66,6 +95,14 @@ const SignUp = () => {
             type="button"
             name="Sign Up"
             onButtonClick={handleFormSubmit}
+          />
+        </div>
+
+        <div>
+          <Button
+            type="button"
+            name="Sign Up With Google"
+            onButtonClick={googleSignUp}
           />
         </div>
       </form>

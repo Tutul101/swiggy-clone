@@ -3,6 +3,7 @@ import FormInput from "../form-input";
 import {
   signInWithGooglePopup,
   createUserDocumentFormAuth,
+  signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase-utils";
 import "./sign-in.scss";
 import Button from "../button";
@@ -24,9 +25,15 @@ const SignIn = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async () => {
     if (userEmail === "" || password === "") {
       alert("Please enter all field before login");
+    } else {
+      const response = await signInAuthUserWithEmailAndPassword(
+        userEmail,
+        password
+      );
+      console.log("form sign in response", response);
     }
   };
   return (
