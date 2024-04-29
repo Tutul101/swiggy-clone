@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./pages/Root";
 import Home from "./pages/home";
 import RestrauntPage from "./pages/restraunt-page";
+import LoginPage from "./pages/login";
 
 import "./scss/index.scss";
 
@@ -18,6 +19,10 @@ function App() {
         {
           path: "restraunt/:resId",
           element: <RestrauntPage />,
+        },
+        {
+          path: "sign-in",
+          element: <LoginPage />,
         },
       ],
     },
