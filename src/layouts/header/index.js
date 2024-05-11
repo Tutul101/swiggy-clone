@@ -1,7 +1,8 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
+import { userActions } from "../../store/userSlice";
 import SwiggyIcon from "../../assets/icons/swiggy-icon";
 import NavItem from "../../components/nav-item";
 import SearchIcon from "../../assets/icons/search-icon";
@@ -10,6 +11,11 @@ import ProfileIcon from "../../assets/icons/profile-icon";
 import "./header.scss";
 
 const Header = () => {
+  const user = useSelector((state) => state.user.user);
+  const dispatch = useDispatch();
+  const handleSignOut = () => {
+    dispatch(userActions.setUserLogout());
+  };
   return (
     <div className="header-wrapper">
       <div className="header">
@@ -23,9 +29,15 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="sign-in">
-              <NavItem icon={ProfileIcon} text="Sign In" />
-            </Link>
+            {user !== null ? (
+              <span className="sign-out" onClick={handleSignOut}>
+                Sign Out
+              </span>
+            ) : (
+              <Link to="sign-in">
+                <NavItem icon={ProfileIcon} text="Sign In" />
+              </Link>
+            )}
           </li>
           <li style={{ display: "flex" }}>
             <div className="cart-wrapper">
