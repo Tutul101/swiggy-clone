@@ -39,6 +39,7 @@ const SignIn = () => {
         password
       );
       console.log("form sign in response", response);
+      dispatch(userActions.setUserLogin(response.user));
     }
   };
   return (

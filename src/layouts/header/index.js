@@ -12,6 +12,7 @@ import "./header.scss";
 
 const Header = () => {
   const user = useSelector((state) => state.user.user);
+  const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const handleSignOut = () => {
     dispatch(userActions.setUserLogout());
@@ -41,8 +42,11 @@ const Header = () => {
           </li>
           <li style={{ display: "flex" }}>
             <div className="cart-wrapper">
-              <p>Cart</p>
-              <span>(0)</span>
+              <Link to="cart">
+                <p>
+                  Cart <span>({cart.totalQuantity})</span>
+                </p>
+              </Link>
             </div>
           </li>
         </ul>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import FormInput from "../form-input";
 import Button from "../button";
 import {
@@ -6,6 +7,8 @@ import {
   createUserDocumentFormAuth,
   signInWithGooglePopup,
 } from "../../utils/firebase/firebase-utils";
+
+import { userActions } from "../../store/userSlice";
 import "./sign-up.scss";
 
 const defautlForm = {
@@ -18,6 +21,7 @@ const SignUp = () => {
   const [formData, setFormData] = useState(defautlForm);
   const { userName, userEmail, password, confirmPassword } = formData;
 
+  const dispatch = useDispatch();
   const HandleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -43,7 +47,11 @@ const SignUp = () => {
           password
         );
         console.log("userDoc", user);
-        await createUserDocumentFormAuth(user, { displayName: userName });
+
+        const userDocRef = await createUserDocumentFormAuth(user, {
+          displayName: userName,
+        });
+        dispatch(userActions.setUserLogin(userDocRef));
         resetFormFields();
       } catch (err) {
         if (err.code === "auth/email-already-in-use") {
@@ -57,6 +65,7 @@ const SignUp = () => {
     const response = await signInWithGooglePopup();
     console.log("sign in response", response.user);
     const userDocRef = await createUserDocumentFormAuth(response.user);
+    dispatch(userActions.setUserLogin(userDocRef.user));
   };
   return (
     <div className="sign-in-wrapper">
