@@ -12,10 +12,11 @@ const useLoadRestrauntData = (restrauntId, initialData) => {
       console.log("Restraunt page api error", err);
     }
   };
+
   useEffect(() => {
     // fetch Data
     getData();
-  }, [restrauntId]);
+  }, []);
 
   return {
     data,

@@ -30,6 +30,11 @@
     a {
       color: var(--grey1);
     }
+    .sign-out {
+      color: var(--grey1);
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
     .cart-wrapper {
       display: flex;
       gap: 0.5rem;
@@ -69,6 +74,10 @@
     }
     .header-menu {
       flex: 0.5;
+
+      .sign-out {
+        font-size: 2rem;
+      }
 
       .cart-wrapper {
         p {

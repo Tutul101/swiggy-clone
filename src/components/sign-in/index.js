@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import FormInput from "../form-input";
+import { useDispatch } from "react-redux";
+import { userActions } from "../../store/userSlice";
 import {
   signInWithGooglePopup,
   createUserDocumentFormAuth,
@@ -14,11 +16,14 @@ const defautlForm = {
 const SignIn = () => {
   const [formData, setFormData] = useState(defautlForm);
   const { userEmail, password } = formData;
+  const dispatch = useDispatch();
 
   const googleSignIn = async () => {
     const response = await signInWithGooglePopup();
     console.log("sign in response", response.user);
     const userDocRef = await createUserDocumentFormAuth(response.user);
+    console.log("userDocRef", userDocRef);
+    dispatch(userActions.setUserLogin(response.user));
   };
   const HandleChange = (e) => {
     const { name, value } = e.target;
@@ -34,6 +39,7 @@ const SignIn = () => {
         password
       );
       console.log("form sign in response", response);
+      dispatch(userActions.setUserLogin(response.user));
     }
   };
   return (

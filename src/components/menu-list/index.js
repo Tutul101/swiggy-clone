@@ -32,14 +32,17 @@ const MenuList = ({ menuSection }) => {
       </div>
       {itemCards.map((item, index) => {
         const info = _get(item, ["card", "info"], {});
-        const { name, imageId, description, price } = info;
+        console.log("info", info);
+        const { id, name, imageId, description, defaultPrice, price } = info;
+        const itemPrice = price === undefined ? defaultPrice : price;
         return (
           <>
             {showMenu && (
               <MenuItem
                 key={index}
+                id={id}
                 name={name}
-                price={price / 100}
+                price={itemPrice / 100}
                 description={description}
                 imageId={imageId}
               />

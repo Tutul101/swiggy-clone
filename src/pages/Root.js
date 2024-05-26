@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../layouts/header";
 import { Outlet } from "react-router-dom";
-import Footer from "../layouts/footer";
+// import Footer from "../layouts/footer";
 
 const Root = () => {
   return (

@@ -3,7 +3,7 @@ import _get from "lodash/get";
 import { useParams } from "react-router-dom";
 
 import RestrauntPageHeader from "../../components/restraunt-page-header";
-import MenuItem from "../../components/menu-item";
+// import MenuItem from "../../components/menu-item";
 import useLoadRestrauntData from "../../utils/useLoadRestrauntData";
 import MenuList from "../../components/menu-list";
 

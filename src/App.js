@@ -5,6 +5,7 @@ import RestrauntPage from "./pages/restraunt-page";
 import LoginPage from "./pages/login";
 
 import "./scss/index.scss";
+import Cart from "./pages/cart-page";
 
 function App() {
   const router = createBrowserRouter([
@@ -23,6 +24,10 @@ function App() {
         {
           path: "sign-in",
           element: <LoginPage />,
+        },
+        {
+          path: "cart",
+          element: <Cart />,
         },
       ],
     },
