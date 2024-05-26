@@ -57,12 +57,10 @@ const HeroCarousel1 = ({ cards }) => {
             const { imageId, action } = cardItem;
             const collectionId = getCollectionID(action.link);
             return (
-              <Link to={`cusines/${collectionId}`} key={imageId}>
-                <CusineCard
-                  imageUrl={cardItem && imageId}
-                  alt={cardItem && action.text}
-                />
-              </Link>
+              <CusineCard
+                imageUrl={cardItem && imageId}
+                alt={cardItem && action.text}
+              />
             );
           })}
       </div>

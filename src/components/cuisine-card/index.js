@@ -9,6 +9,7 @@ const CusineCard = ({ imageUrl, ...props }) => {
       className="cusine-card-image"
       src={`${imageBaseUrl}${imageUrl}`}
       {...props}
+      alt="cusinine name"
     />
   );
 };

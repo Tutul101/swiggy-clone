@@ -25,7 +25,7 @@ const LoginPage = () => {
         <div className="auth-image-wrapper">
           <img
             src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Image-login_btpq7r"
-            alt="roll image"
+            alt="roll "
           />
         </div>
       </div>
